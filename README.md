@@ -6,6 +6,7 @@ While the terms model serving and inference are sometimes used interchangeably t
 * Install [Google Cloud CLI](https://cloud.google.com/sdk?hl=en) on your local workstation.
 * Install [Docker Desktop](https://docs.docker.com/desktop/) on your local workstation.
 ### Model Serving Alternatives
+For model serving you have options ranging from local deployment (for small projects and testing) to cloud-based solutions like Cloud Run and Vertex AI for production applications.  Each option has its own specific trade-offs with respect to focus, infrastructure, flexability, scalability, cost and features.
 * [Local Serving via Docker](/local/README.md)
 * [Serving via Cloud Run](/cloud_run/README.md)
 * [Serving via Vertex AI](/vertex_ai/README.md)
