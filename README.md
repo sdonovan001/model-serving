@@ -11,7 +11,7 @@ For model serving you have options ranging from local deployment (for small proj
 | Feature | Local Docker | Cloud Run | Vertex AI |
 | ------- | ----- | --------- | --------- |
 | Focus | General-purpose containerized applications | General-purpose containerized applications | ML workflows and models |
-| Infrastructure | Runs on local workstation | Managed | Managed |
+| Infrastructure | Runs on local workstation | Runs on managed infrastructure| Runs on managed infrastructure |
 | Flexibility | Highly flexible, can run any container | Highly flexible, can run any container | Specialized for ML tasks |
 | Scalability | Not scalable | Dynamic, scales to zero | Dynamic, does NOT scale to zero |
 | Cost | Free | Pay-as-you-go | Pay-as-you-go |
