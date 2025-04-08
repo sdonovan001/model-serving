@@ -8,7 +8,7 @@ While the terms model serving and inference are sometimes used interchangeably t
 ### Model Serving Alternatives
 For model serving you have options ranging from local deployment (for small projects and testing) to cloud-based solutions like Cloud Run and Vertex AI for production applications.  Each option has its own specific trade-offs with respect to focus, infrastructure, flexability, scalability, cost and features.
 
-| Feature | Local | Cloud Run | Vertex AI |
+| Feature | Local Docker | Cloud Run | Vertex AI |
 | ------- | ----- | --------- | --------- |
 | Focus | General-purpose containerized applications | General-purpose containerized applications | ML Workflows and models |
 | Infrastructure | N/A | Managed | Managed |
