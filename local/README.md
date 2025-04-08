@@ -1,8 +1,2 @@
-# Model Serving
-While the terms model serving and inference are sometimes used interchangeably they are not equivalent. Inference is using a trained model to make predictions on new or unseen data. Model serving is the process of deploying a trained model to make inference possible. In this repo we will walk you through 3 different ways to serve a trained model.
-
-## Local Serving via Docker
-
-## Serving via Cloud Run
-
-## Serving via Vertex AI
+# Local Docker 
+Running Docker locally offers significant benefits for developers, including consistent environments, streamlined dependency management, and faster development workflows, ultimately leading to more reliable and efficient software delivery. We will be using Docker Desktop which is a one-click-install application for your Mac, Linux, or Windows environment that lets you build, share, and run containerized applications and microservices. Installation instructions can be found [here](https://docs.docker.com/desktop/).
