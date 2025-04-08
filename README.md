@@ -17,6 +17,7 @@ For model serving you have options ranging from local deployment (for small proj
 | Cost | Free | Pay-as-you-go | Pay-as-you-go |
 | Features | Containerized, NOT suitable for production | Containerized, API gateway, suitable for production | Model (training, deployment, monitoring), Model Registry, suitable for production |
 
+### Explore Alternatives
 * [Local Serving via Docker](/local/README.md)
 * [Serving via Cloud Run](/cloud_run/README.md)
 * [Serving via Vertex AI](/vertex_ai/README.md)
