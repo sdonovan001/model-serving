@@ -15,7 +15,7 @@ For model serving you have options ranging from local deployment (for small proj
 | Flexibility | Highly flexible, can run any container | Highly flexible, can run any container | Specialized for ML tasks |
 | Scalability | Not scalable | Dynamic, scales to zero | Dynamic, does NOT scale to zero |
 | Cost | Free | Pay-as-you-go | Pay-as-you-go |
-| Features | Containerized, Not suitable for production | Containerized, API gateway, suitable for production | Model (training, deployment, monitoring), Model Registry, suitable for production |
+| Features | Containerized, NOT suitable for production | Containerized, API gateway, suitable for production | Model (training, deployment, monitoring), Model Registry, suitable for production |
 
 * [Local Serving via Docker](/local/README.md)
 * [Serving via Cloud Run](/cloud_run/README.md)
