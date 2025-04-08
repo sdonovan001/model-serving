@@ -5,4 +5,4 @@ While the terms model serving and inference are sometimes used interchangeably t
 
 * [Serving via Cloud Run](/cloud_run/README.md)
 
-* [Serving via Vertex AI](/vertex-ai/README.md)
+* [Serving via Vertex AI](/vertex_ai/README.md)
