@@ -26,6 +26,3 @@ docker run --platform linux/amd64 --rm -p 8501:8501 -v "$(base_dir)/saved_models
 | -v $(base_dir)/saved_models:/models | Maps directory $(base_dir)/saved_models on host to /models directory in running container |
 | -e MODEL_NAME=fare-model | Sets environment variable MODEL_NAME inside container to fare-model |
 | --name tf_serving_container | Assigns the running container's name to tf_serving_container |
-
----
-| here is a buds skjs skjskjs sijsjs kj kj kj kkj khjhg hg hg hg hghg h   ghg hg hg h hghg hhgh ghg hghg hg h hghg hg hg hg hgh gh ghg hg hg hg hg hg hg hg hg hg h ghg hg hg hg hg h gh gh gh g h guyg hg jg jhg jhg jhg hg jh jhg jhg jhg jhg jhg hg jhg jhg jhg jhg jhg jhg jhg jhg jhg jhg jhg jhg jhg jhg jhg jhg jhg jhg jg jhg jhg jhg jhg jhg | kjsks |
