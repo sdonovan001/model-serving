@@ -17,9 +17,9 @@ base_dir=$(git rev-parse --show-toplevel)
 docker run --platform linux/amd64 --rm -p 8501:8501 -v "$(base_dir)/saved_models:/models" \
    -e MODEL_NAME=fare-model --name tf_serving_container tensorflow/serving
 ```
-| arg | Purpose |
+| Command Line ARGs | Purpose |
 | --- | ------- |
-| run [OPTIONS] IMAGE [COMMAND] [ARG...] | Starts a container and runs a command in it |
+| run [OPTIONS] IMAGE [COMMAND] | Starts a container and runs a command in it |
 | --platform linux/amd64 | Instructs Docker to run in amd64 emulation mode (needed for Apple silicon) |
 | --rm | Remove container on exit |
 | -p 8501:8501 | Maps port 8501 on host to port 8501 inside container |
