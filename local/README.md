@@ -20,7 +20,7 @@ docker run --platform linux/amd64 --rm -p 8501:8501 -v "$(base_dir)/saved_models
 | Command Line ARGs | Purpose |
 | --- | ------- |
 | run [OPTIONS] IMAGE [COMMAND] | Starts a container and runs a command in it |
-| --platform linux/amd64 | Instructs Docker to run in amd64 emulation mode (needed for Apple silicon) |
+| --platform linux/amd64 | Instructs Docker to run container in amd64 emulation mode (needed for Apple silicon) |
 | --rm | Remove container on exit |
 | -p 8501:8501 | Maps port 8501 on host to port 8501 inside container |
 | -v $(base_dir)/saved_models:/models | Maps directory $(base_dir)/saved_models on host to /modles directory in running container |
