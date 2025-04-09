@@ -28,6 +28,6 @@ docker run --platform linux/amd64 --rm -p 8501:8501 -v "${base_dir}/saved_models
 | --name tf_serving_container | Assigns the running container's name to tf_serving_container |
 
 ### Serving with a Custom Docker Image
-If we want to truly realize all of the benifits Docker provides, when using it to server our models, we are going to need to build a custom docker image.  Building a custom image will result in a 100% self contained image with no dependencies on local file systems.  This will enable us to serve our model from any environment capable of running Docker containers... like kubernetes or Cloud Run for example.
+If we want to truly realize all of the benifits Docker provides, when using it to server our models, we are going to need to build a custom Docker image.  Building a custom image will result in a 100% self contained image with no dependencies on local file systems.  This will enable us to serve our model from any environment capable of running Docker containers... like kubernetes or Cloud Run for example.
 
 Since we're building a custom image, we might as well take the opportunity to make the ports the application listens on configurable while were at it. A simple four line Dockerfile lets us start from the "tensorflow/serving" image as our base image and copies in our trained model and new (more configurable) entry point.
