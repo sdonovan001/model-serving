@@ -8,7 +8,7 @@ While the terms model serving and inference are sometimes used interchangeably t
 ### Model Serving Alternatives
 For model serving you have options ranging from local deployment (for small projects and testing) to cloud-based solutions like Cloud Run and Vertex AI for production applications.  Each option has its own specific trade-offs with respect to focus, infrastructure, flexability, scalability, cost and features.
 
-| Feature | Local Docker | Cloud Run | Vertex AI |
+| Feature | Local Deployment | Cloud Run | Vertex AI |
 | ------- | ----- | --------- | --------- |
 | Focus | General-purpose containerized applications | General-purpose containerized applications | ML workflows and models |
 | Infrastructure | Runs on local workstation | Runs on managed infrastructure| Runs on managed infrastructure |
@@ -19,6 +19,6 @@ For model serving you have options ranging from local deployment (for small proj
 
 ### Explore Alternatives
 The examples below are all serving up a model that predicts cab fares (label: FARE) based on the trip distance and duration (features: TRIP_MILES, TRIP_MINUTES). The model was trained using TensorFlow and Keras and has been saved in TensorFlow's SavedModel format in the saved_models directory of this repo.  Model training details can be found in my [ml-linear-regression](https://github.com/sdonovan001/ml-linear-regression) repo.
-* [Local Serving via Docker](/local/README.md)
+* [Serving via Local Deployment](/local/README.md)
 * [Serving via Cloud Run](/cloud_run/README.md)
 * [Serving via Vertex AI](/vertex_ai/README.md)
