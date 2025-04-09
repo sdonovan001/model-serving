@@ -24,5 +24,5 @@ docker run --platform linux/amd64 --rm -p 8501:8501 -v "$(base_dir)/saved_models
 | --rm | Remove container on exit |
 | -p 8501:8501 | Maps port 8501 on host to port 8501 inside container |
 | -v $(base_dir)/saved_models:/models | Maps directory $(base_dir)/saved_models on host to /models directory in running container |
-| -e MODEL_NAME=fare-model | Sets environment MODEL_NAME inside container to fare-model |
+| -e MODEL_NAME=fare-model | Sets environment variable MODEL_NAME inside container to fare-model |
 | --name tf_serving_container | Assigns the running container's name to tf_serving_container |
