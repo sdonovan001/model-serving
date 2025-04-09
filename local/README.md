@@ -19,18 +19,19 @@ docker run --platform linux/amd64 --rm -p 8501:8501 -v "${base_dir}/saved_models
 ```
 | Command Line ARGs | Purpose |
 | --- | ------- |
-| run [OPTIONS] IMAGE [COMMAND] | Starts a container and runs a command in it |
-| --platform linux/amd64 | Instructs Docker to run container in amd64 emulation mode (needed for Apple silicon) |
-| --rm | Remove container on exit |
-| -p 8501:8501 | Maps port 8501 on host to port 8501 inside container |
-| -v ${base_dir}/saved_models:/models | Maps directory $(base_dir)/saved_models on host to /models directory in running container |
-| -e MODEL_NAME=fare-model | Sets environment variable MODEL_NAME inside container to fare-model |
-| --name tf_serving_container | Assigns the running container's name to tf_serving_container |
+| run [OPTIONS] IMAGE [COMMAND] | Starts a container and runs a command in it. |
+| --platform linux/amd64 | Instructs Docker to run container in amd64 emulation mode (needed for Apple silicon). |
+| --rm | Remove container on exit. |
+| -p 8501:8501 | Maps port 8501 on host to port 8501 inside container. |
+| -v ${base_dir}/saved_models:/models | Maps directory $(base_dir)/saved_models on host to /models directory in running container. |
+| -e MODEL_NAME=fare-model | Sets environment variable MODEL_NAME inside container to fare-model. |
+| --name tf_serving_container | Assigns the running container's name to tf_serving_container. |
 
 ```
-# Once you've started your serving container you can test it with curl.  In the json input blob 
-# TRIP_MILES=24.7 and TRIP_MINUTES=40.66.
-curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' -X POST http://localhost:8501/v1/models/fare-model/versions/1:predict
+# Once you've started your serving container you can test it with curl.  In the json input blob the models
+# features are TRIP_MILES=24.7 and TRIP_MINUTES=40.66.
+curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' \
+   -X POST http://localhost:8501/v1/models/fare-model/versions/1:predict
 
 # This should return something like...
 {
@@ -46,12 +47,13 @@ Since we're building a custom image, we might as well take the opportunity to ma
 # Build custom image using tar to sidestep Dockers inability to follow soft links (the saved_models dir)...
 tar -czh | docker build -t cab-fare-model -
 
-# Run container...
+# Run container... Note: No bind mount necessary for the model since it's in the custom image
 docker run --platform linux/amd64 --rm -p 8088:8088 -e GRPC_PORT=8089 -e REST_PORT=8088 \
    -e MODEL_NAME=fare-model --name tf_serving_container cab-fare-model
 
 # Test container... 
-curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' -X POST http://localhost:8088/v1/models/fare-model/versions/1:predict
+curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' \
+   -X POST http://localhost:8088/v1/models/fare-model/versions/1:predict
 
 # This should return something like...
 {
