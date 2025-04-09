@@ -12,9 +12,17 @@ docker pull tensorflow/serving
 
 # Find location of your saved model dir
 base_dir=$(git rev-parse --show-toplevel)
-model_dir="$(base_dir)/saved_models"
 
 # Run container...
-docker run --platform linux/amd64 --rm -p 8501:8501 -v "$(PWD)/saved_models:/models" \
+docker run --platform linux/amd64 --rm -p 8501:8501 -v "$(base_dir)/saved_models:/models" \
    -e MODEL_NAME=fare-model --name tf_serving_container tensorflow/serving
 ```
+| arg | Purpose |
+| --- | ------- |
+| run [OPTIONS] IMAGE [COMMAND] [ARG...] | Starts a container and runs a command in it |
+| --platform NAME | Instructs Docker to run in amd64 emulation mode (needed for Apple silicon) |
+| --rm | Remove container on exit |
+| -p HOST_PORT:CONTAINER_PORT | Maps HOST_PORT port on host to CONTAINER_PORT port inside container |
+| -v HOST_DIR:CONTAINER_DIR | Maps HOST_DIR on host to CONTAINER_DIR in running container |
+| -e ENV_VAR_NAME=ENV_VAR_VALUE | Sets environment variables inside container |
+| --name CONTAINER_NAME | Assigns the running container a name |
