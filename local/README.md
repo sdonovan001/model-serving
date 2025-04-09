@@ -44,7 +44,7 @@ Since we're building a custom image, we might as well take the opportunity to ma
 
 ```
 # Build custom image...
-docker build cab-fare-model .
+docker build -t cab-fare-model .
 
 # Run container...
 docker run --platform linux/amd64 --rm -p 8088:8088 -e GRPC_PORT=8089 -e REST_PORT=8088 \
