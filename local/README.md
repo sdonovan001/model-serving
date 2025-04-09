@@ -20,9 +20,9 @@ docker run --platform linux/amd64 --rm -p 8501:8501 -v "$(base_dir)/saved_models
 | arg | Purpose |
 | --- | ------- |
 | run [OPTIONS] IMAGE [COMMAND] [ARG...] | Starts a container and runs a command in it |
-| --platform NAME | Instructs Docker to run in amd64 emulation mode (needed for Apple silicon) |
+| --platform linux/amd64 | Instructs Docker to run in amd64 emulation mode (needed for Apple silicon) |
 | --rm | Remove container on exit |
-| -p HOST_PORT:CONTAINER_PORT | Maps HOST_PORT port on host to CONTAINER_PORT port inside container |
-| -v HOST_DIR:CONTAINER_DIR | Maps HOST_DIR on host to CONTAINER_DIR in running container |
-| -e ENV_VAR_NAME=ENV_VAR_VALUE | Sets environment variables inside container |
-| --name CONTAINER_NAME | Assigns the running container a name |
+| -p 8501:8501 | Maps port 8501 on host to port 8501 inside container |
+| -v $(base_dir)/saved_models:/models | Maps directory $(base_dir)/saved_models on host to /modles directory in running container |
+| -e MODEL_NAME=fare-model | Sets environment MODEL_NAME inside container to fare-model |
+| --name tf_serving_container | Assigns the running container's name to tf_serving_container |
