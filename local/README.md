@@ -7,5 +7,14 @@ To simplify local model serving we will leverage [TensorFlow Serving](https://ww
 The TensofFlow Serving Docker container includes everything needed to serve a trained model.  The only thing missing is your trained model which can easily be passed in via a bind mount.
 
 ```
-foo
+# Download container to your workstation
+docker pull tensorflow/serving
+
+# Find location of your saved model dir
+base_dir=$(git rev-parse --show-toplevel)
+model_dir="$(base_dir)/saved_models"
+
+# Run container...
+docker run --platform linux/amd64 --rm -p 8501:8501 -v "$(PWD)/saved_models:/models" \
+   -e MODEL_NAME=fare-model --name tf_serving_container tensorflow/serving
 ```
