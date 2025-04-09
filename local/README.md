@@ -43,8 +43,8 @@ If we want to truly realize all of the benifits Docker provides, when using it t
 Since we're building a custom image, we might as well take the opportunity to make the ports the application listens on configurable while were at it. A simple four line Dockerfile lets us start from the "tensorflow/serving" image as our base image and copy in our trained model and new (more configurable) entrypoint.
 
 ```
-# Build custom image...
-docker build cab-fare-model .
+# Build custom image using tar to sidestep Dockers inability to follow soft links (the saved_models dir)...
+tar -czh | docker build -t cab-fare-model -
 
 # Run container...
 docker run --platform linux/amd64 --rm -p 8088:8088 -e GRPC_PORT=8089 -e REST_PORT=8088 \
