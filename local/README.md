@@ -28,8 +28,8 @@ docker run --platform linux/amd64 --rm -p 8501:8501 -v "${base_dir}/saved_models
 | --name tf_serving_container | Assigns the running container's name to tf_serving_container. |
 
 ```
-# Once you've started your serving container you can test it with curl.  In the json input blob the models
-# features are TRIP_MILES=24.7 and TRIP_MINUTES=40.66.
+# Once you've started your serving container you can test it with curl.  In the json input blob, the models
+# features are trip_miles=24.7 and trip_minutes=40.66.
 curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' \
    -X POST http://localhost:8501/v1/models/fare-model/versions/1:predict
 
