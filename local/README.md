@@ -4,7 +4,7 @@ Running Docker locally offers significant benefits for developers, including con
 To simplify local model serving we will leverage [TensorFlow Serving](https://www.tensorflow.org/tfx/guide/serving). TensorFlow Serving is a flexible, high-performance serving system for machine learning models, designed for production environments. TensorFlow Serving makes it easy to deploy new algorithms and experiments, while keeping the same server architecture and APIs. TensorFlow Serving provides out-of-the-box integration with TensorFlow models. As luck would have it, there is a self contained TensorFlow Serving Docker container that is trivial to stand up for local model deployments.
 
 ### Serving with Docker via Bind Mount
-The TensofFlow Serving Docker container includes everything needed to serve a trained model.  The only thing missing is your trained model which can easily be passed in via a Docker bind mount. While this does not result in a self contained image that can serve you model from any environment capable of running Docker containers, it is the simpliest way to quickly stand something up on your local workstation. 
+The TensofFlow Serving Docker container includes everything needed to serve a trained model.  The only thing missing is your trained model which can easily be passed in via a Docker bind mount. While this does not result in a self contained image that can serve your model from any environment capable of running Docker containers, it is the simpliest way to quickly stand something up on your local workstation. 
 
 ```
 # Download container to your workstation
