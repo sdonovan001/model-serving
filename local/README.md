@@ -55,7 +55,7 @@ docker run --platform linux/amd64 --rm -p 8088:8088 -e GRPC_PORT=8089 -e REST_PO
 curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' \
    -X POST http://localhost:8088/v1/models/fare-model/versions/1:predict
 
-# This should return something like...
+# This should return a prediction for the cabe fare similar to...
 {
     "predictions": [[59.6053162]]
 }
