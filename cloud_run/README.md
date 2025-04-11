@@ -14,16 +14,19 @@ gcloud artifacts repositories create model-repo --repository-format=docker \
 
 ### Push Custom Image to Repo 
 ```
+# Export your GCP project ID...
+export project_id=[enter-your-project-id]
+
 # Configure Docker on workstation to use gcloud as credential helper when interacting with new repo...
 gcloud auth configure-docker us-central1-docker.pkg.dev
 
 # Tag our custom image properly so we can push to new repo...
 docker tag cab-fare-model:latest \
-us-central1-docker.pkg.dev/erudite-fusion-456417-v4/model-repo/cab-fare-model:v1.0.0
+us-central1-docker.pkg.dev/${project_id}/model-repo/cab-fare-model:v1.0.0
 
 # Push custom image to new repo...
 docker push \
-us-central1-docker.pkg.dev/erudite-fusion-456417-v4/model-repo/cab-fare-model:v1.0.0
+us-central1-docker.pkg.dev/${project_id}/model-repo/cab-fare-model:v1.0.0
 ```
 
 ### Launch Model as Cloud Run Service 
@@ -32,7 +35,7 @@ us-central1-docker.pkg.dev/erudite-fusion-456417-v4/model-repo/cab-fare-model:v1
 gcloud services enable run.googleapis.com
 
 # Deploy cab fare model to Cloud Run...
-gcloud run deploy cab-fare-model --image us-central1-docker.pkg.dev/erudite-fusion-456417-v4/model-repo/cab-fare-model:v1.0.0 \
+gcloud run deploy cab-fare-model --image us-central1-docker.pkg.dev/${project_id}/model-repo/cab-fare-model:v1.0.0 \
    --set-env-vars GRPC_PORT=8089,REST_PORT=8088,MODEL_NAME=fare-model --port 8088 --no-invoker-iam-check
 
 # Test service with trip_miles=24.7 and trip_minutes=40.66
