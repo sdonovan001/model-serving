@@ -38,4 +38,9 @@ gcloud run deploy cab-fare-model --image us-central1-docker.pkg.dev/erudite-fusi
 # Test service with trip_miles=24.7 and trip_minutes=40.66
 curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' \
    -X POST https://cab-fare-model-a3xzilpmfa-uc.a.run.app/v1/models/fare-model/versions/1:predict
+
+# This should return a prediction for the cab fare similar to...
+{
+    "predictions": [[59.6053162]]
+}
 ```
