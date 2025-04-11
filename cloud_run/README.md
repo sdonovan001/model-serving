@@ -38,7 +38,7 @@ gcloud services enable run.googleapis.com
 gcloud run deploy cab-fare-model --image us-central1-docker.pkg.dev/${project_id}/model-repo/cab-fare-model:v1.0.0 \
    --set-env-vars GRPC_PORT=8089,REST_PORT=8088,MODEL_NAME=fare-model --port 8088 --no-invoker-iam-check
 
-# Test service with trip_miles=24.7 and trip_minutes=40.66
+# Test service with trip_miles=24.7 and trip_minutes=40.66...
 curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' \
    -X POST https://cab-fare-model-a3xzilpmfa-uc.a.run.app/v1/models/fare-model/versions/1:predict
 
