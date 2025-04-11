@@ -28,12 +28,11 @@ docker run --platform linux/amd64 --rm -p 8501:8501 -v "${base_dir}/saved_models
 | --name tf_serving_container | Assigns the running container's name to tf_serving_container. |
 
 ```
-# Once you've started your serving container you can test it with curl.  In the json input blob, the models
-# features are trip_miles=24.7 and trip_minutes=40.66.
+# Test service with trip_miles=24.7 and trip_minutes=40.66...
 curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' \
    -X POST http://localhost:8501/v1/models/fare-model/versions/1:predict
 
-# This should return something like...
+# This should return a prediction for the cab fare similar to...
 {
     "predictions": [[59.6053162]]
 }
@@ -51,7 +50,7 @@ tar -czh | docker build -t cab-fare-model -
 docker run --platform linux/amd64 --rm -p 8088:8088 -e GRPC_PORT=8089 -e REST_PORT=8088 \
    -e MODEL_NAME=fare-model --name tf_serving_container cab-fare-model
 
-# Test container... 
+# Test custom image with trip_miles=24.7 and trip_minutes=40.66...
 curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' \
    -X POST http://localhost:8088/v1/models/fare-model/versions/1:predict
 
