@@ -44,7 +44,7 @@ Since we're building a custom image, we might as well take the opportunity to ma
 
 ```
 # Build custom image using tar to sidestep Dockers inability to follow soft links (the saved_models dir)...
-tar -czh | docker build -t cab-fare-model -
+tar -czh . | docker build -t cab-fare-model -
 
 # Run container... Note: No bind mount necessary for the model since it's in the custom image
 docker run --platform linux/amd64 --rm -p 8088:8088 -e GRPC_PORT=8089 -e REST_PORT=8088 \
