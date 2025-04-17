@@ -18,7 +18,9 @@ For model serving you have options ranging from local deployment (for small proj
 | Features | Containerized, NOT suitable for production | Containerized, API gateway, suitable for production | Model (training, deployment, monitoring), Model Registry, suitable for production |
 
 ### Explore Alternatives
-The examples below are all serving up a model that predicts cab fares (label: FARE) based on the trip distance and duration (features: TRIP_MILES, TRIP_MINUTES). The model was trained using TensorFlow and Keras and has been saved in TensorFlow's SavedModel format in the saved_models directory of this repo.  Model training details can be found in my [ml-linear-regression](https://github.com/sdonovan001/ml-linear-regression) repo.
+The examples below are all serving up a model that predicts cab fares (label: FARE) based on the trip distance and duration (features: TRIP_MILES, TRIP_MINUTES). The model was trained using TensorFlow and Keras and has been saved in TensorFlow's SavedModel format in the saved_models directory of this repo.  
 * [Serving via Local Deployment](/local/README.md)
 * [Serving via Cloud Run](/cloud_run/README.md)
 * [Serving via Vertex AI](/vertex_ai/README.md)
+
+:warning: Model training details for this model can be found in my [ml-linear-regression](https://github.com/sdonovan001/ml-linear-regression) repo. :warning:
