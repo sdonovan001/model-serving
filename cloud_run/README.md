@@ -55,6 +55,6 @@ curl -d @request.json \
 
 # This should return a prediction for the cab fare similar to...
 {
-    "predictions": [[59.6053162]]
+    "predictions": [[59.6053162], [15.6879635], [22.9669094]]
 }
 ```
