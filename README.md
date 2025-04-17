@@ -1,5 +1,5 @@
 # Model Serving
-While the terms model serving and inference are sometimes used interchangeably they are not equivalent. Inference is using a trained model to make predictions on new or unseen data. Model serving is the process of deploying a trained model to make inference possible. In this repo we will walk you through 3 different ways to serve a trained model.
+Model serving is the process of deploying trained machine learning models into a production environment, making their functions available via APIs or other services. This allows applications and other systems to interact with the models, making predictions, or performing tasks based on new input data. It's essentially the step that transforms a trained model from a static file into a value-generating service. In this repo we will walk you through 3 different ways to serve a trained model.
 
 ### Prerequsites
 * Your own [GCP account](https://cloud.google.com/free?hl=en).

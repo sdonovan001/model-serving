@@ -3,18 +3,21 @@ Vertex AI is a fully-managed, unified machine learning (ML) platform from Google
 
 ### Prerequsites
 ```
-gcloud config set ai/region us-central1
+ # Enable the Vertex AI service...
 gcloud services enable aiplatform.googleapis.com
 
+# Set a default region for Vertex AI...
+gcloud config set ai/region us-central1
+
 # Save a few values for later use... 
-REGION=us-central1
+REGION=$(gcloud config get-value ai/region)
 PROJECT_ID=$(gcloud config get-value project)
 ```
 
 ### Copy Trained Model into GCS Bucket
 ```
 # Create a bucket with a globaly unique name to store your trained model in...
-gsutil mb -l us-central1 gs://scotts-awesome-bucket-name
+gsutil mb -l ${REGION} gs://scotts-awesome-bucket-name
 
 # Copy your trained model into the bucket...
 gsutil cp -R saved_models gs://scotts-awesome-bucket-name
