@@ -1,5 +1,5 @@
 # Model Serving with Vertex AI
-Vertex AI is a fully-managed, unified machine learning (ML) platform from Google Cloud that helps users build, train, deploy, and manage AI models. It integrates data engineering, data science, and ML engineering workflows, allowing teams to collaborate and scale their applications efficiently. Vertex AI offers tools for various ML tasks, including predictive AI and generative AI, and provides access to pre-trained models and tools for customization. Below we will show you how to serve a model trained outside of Vertex AI by leveraging a pre-built TensorFlow runtime container.
+[Vertex AI](https://cloud.google.com/vertex-ai?hl=en) is a fully-managed, unified machine learning (ML) platform from Google Cloud that helps users build, train, deploy, and manage AI models. It integrates data engineering, data science, and ML engineering workflows, allowing teams to collaborate and scale their applications efficiently. Vertex AI offers tools for various ML tasks, including predictive AI and generative AI, and provides access to pre-trained models and tools for customization. Below we will show you how to serve a model trained outside of Vertex AI by leveraging a pre-built TensorFlow runtime container.
 
 ### Prerequsites
 ```
