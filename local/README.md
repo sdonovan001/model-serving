@@ -50,12 +50,23 @@ tar -czh . | docker build -t cab-fare-model -
 docker run --platform linux/amd64 --rm -p 8088:8088 -e GRPC_PORT=8089 -e REST_PORT=8088 \
    -e MODEL_NAME=fare-model --name tf_serving_container cab-fare-model
 
-# Test custom image with trip_miles=24.7 and trip_minutes=40.66...
-curl -d '{"signature_name": "serving_default", "instances": [[24.7, 40.66]]}' \
+# json blob with a few [TRIP_MILES, TRIP_MINUTES] prediction requests...
+cat request.json
+
+{
+   "instances": [
+      [24.7, 40.66],
+      [4.66, 16.95],
+      [8.23, 17.41]
+   ]
+}
+
+# Send request.json to running container...
+curl -d @request.json \
    -X POST http://localhost:8088/v1/models/fare-model/versions/1:predict
 
-# This should return a prediction for the cabe fare similar to...
+# This should return a prediction for the cab fare similar to...
 {
-    "predictions": [[59.6053162]]
+    "predictions": [[59.6053162], [15.6879635], [22.9669094]]
 }
 ```
