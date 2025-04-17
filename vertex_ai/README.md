@@ -45,6 +45,18 @@ gcloud ai endpoints deploy-model ${ENDPOINT_ID} --model=${MODEL_ID} --display-na
 ```
 ### Make Prediction Requests
 ```
+# json blob with a few [TRIP_MILES, TRIP_MINUTES] requests...
+cat request.json
+
+{
+   "instances": [
+      [24.7, 40.66],
+      [4.66, 16.95],
+      [8.23, 17.41]
+   ]
+}
+
+# Send request.json to our Vertex AI endpoint...
 curl -X POST \
      -H "Authorization: Bearer $(gcloud auth print-access-token)" \
      -H "Content-Type: application/json; charset=utf-8" \
