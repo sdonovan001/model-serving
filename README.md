@@ -23,4 +23,4 @@ The examples below are all serving up a model that predicts cab fares (label: FA
 * [Serving via Cloud Run](/cloud_run/README.md)
 * [Serving via Vertex AI](/vertex_ai/README.md)
 
-:warning: Model training details for this model can be found in my [ml-linear-regression](https://github.com/sdonovan001/ml-linear-regression) repo. :warning:
+:warning: Model training details for this model can be found in my [ml-linear-regression](https://github.com/sdonovan001/ml-linear-regression) repo.
